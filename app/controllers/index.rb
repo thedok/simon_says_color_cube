@@ -4,8 +4,8 @@ get '/' do
 end
 
 post '/color' do
-
   cell= rand(1..9)
   color= "#" + "%06x" % (rand * 0xffffff)
-  return {cell: cell, color: color}.to_json
+  #Also works with JSON.generate({cell: cell, color: color})
+  {cell: cell, color: color}.to_json
 end
